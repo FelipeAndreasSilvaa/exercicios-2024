@@ -35,6 +35,9 @@ describe('checa elementos básicos', () => {
   it('enviar o formulário exibe mensagem de sucesso', () => {
     cy.get('.btn-create-topic').click();
     cy.get('button').click();
+    cy.get('form').should('be.visible');
+    cy.get('form button[type="submit"]').click();
+    cy.contains('Seu tópico foi enviado com sucesso! :D').should('be.visible');
     cy.get('body').contains('Aguardando feedback dos autores');
     cy.compareSnapshot('Trabalho - Topico enviado');
   });

@@ -113,7 +113,7 @@
     padding-left: 7px;
   }
 
-  .descricao-span{
+  button.btn-show-more{
     font-weight: bold;
     cursor: pointer;
   }
@@ -170,8 +170,18 @@
   margin-top: 40px;
 }
 
-.btn-criar{
-  background-color: #FEB254;
+#btn-create-topic{
+  background-image: linear-gradient(to right, #FEB254 , #F0813D);
+  padding: 10px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+#btn-create-topic-success{
+  background-image: linear-gradient(to right, #FEB254 , #F0813D);
   padding: 10px;
   border: 0;
   color: white;
@@ -361,6 +371,26 @@
 }
 
 
+.mensagem-sucesso{
+  text-align: center;
+}
+
+.topico-p{
+  font-weight: 700;
+  color: #ED7839;
+  font-size: 18px;
+}
+
+.topico-p-2{
+  color: #595959;
+  font-size: 14px;
+}
+
+.topico-p-3{
+  font-weight: 500;
+  font-size: 14px;
+  color: #F48F44;
+}
 /* Media query para 960px de largura */
 @media screen and (max-width: 960px) {
   .container {

@@ -6,8 +6,11 @@ interface Assunto {
   conteudo: string;
   mostrarExcluir: boolean;
   showComments: boolean;
-
+  respondido: boolean;
+  id: number; // Adicione a propriedade 'id'
+  commentCount: number; // Adicione a propriedade 'commentCount'
 }
+
 
 @Component({
   selector: 'app-main',
@@ -17,8 +20,13 @@ interface Assunto {
 export class MainComponent implements OnInit {
   // Variáveis para controlar a exibição dos campos de discussão
   mostrarCampos: boolean = false;
+  topicCriado: boolean = false;
+  mostrarMensagem = false;
   assunto: string = '';
   conteudo: string = '';
+  respondido: boolean = false;
+  showOpsTopicSubject = true; 
+  
 
  // Variáveis para controlar a criação de novos tópicos
   novoTopicoCriado: boolean = false;
@@ -46,17 +54,24 @@ export class MainComponent implements OnInit {
 }
 
   criarTopico() {
+    let contadorTopicos = 0;
+    contadorTopicos++;
     const novoAssunto: Assunto = {
       titulo: this.assunto,
       autor: 'Carlos Henrique Santos', // ou qualquer outra fonte de autor que você tenha
       conteudo: this.conteudo,
       mostrarExcluir: false,
-      showComments: false
-
+      showComments: false,
+      respondido: false,
+      id: 0,
+      commentCount: 0 
     };
 
     // Adicionar o novo tópico ao array de tópicos
     this.assuntos.push(novoAssunto);
+
+    this.topicCriado = true;
+
 
     // Salvar os tópicos atualizados no localStorage
     localStorage.setItem('assuntos', JSON.stringify(this.assuntos));
@@ -64,6 +79,19 @@ export class MainComponent implements OnInit {
     // Limpar os campos de entrada após a criação do tópico
     this.assunto = '';
     this.conteudo = '';
+    this.mostrarCampos = false;
+  }
+
+  resetar() {
+    // Ao clicar no botão para criar um novo tópico, resetamos os valores e escondemos a mensagem de sucesso
+    this.mostrarCampos = false;
+    this.assunto = '';
+    this.conteudo = '';
+    this.topicCriado = false;
+}
+
+  criarNovoTopico() {
+    this.mostrarCampos = true;
   }
 
 
@@ -79,16 +107,30 @@ export class MainComponent implements OnInit {
     // COMENTARIOS
     showComments: boolean = false;
     commentCount: number = 1; // Inicialmente, temos um comentário
-    showComments2: boolean = false;
-    commentCount2: number = 1; // Inicialmente, temos um comentário
+    
 
     toggleComments(topico: Assunto) {
       topico.showComments = !topico.showComments;
+      topico.respondido = true;
+
+      if (topico.showComments) {
+        this.addOpsTopicSubject(topico);
+      }
+  }
+
+  addOpsTopicSubject(topico: Assunto) {
+    // Lógica para adicionar o elemento .ops-topic-subject ao DOM
+    const topicElement = document.getElementById(`topic-${topico.id}`);
+    if (topicElement) {
+      const opsTopicSubjectElement = document.createElement('div');
+      opsTopicSubjectElement.className = 'ops-topic-subject';
+      topicElement.querySelector('.comments-box')?.appendChild(opsTopicSubjectElement);
+    } else {
+      console.error(`Elemento do tópico com ID 'topic-${topico.id}' não encontrado.`);
+    }
   }
   
-    toggleComments2() {
-      this.showComments2 = !this.showComments2;
-    }
+
 
 
   constructor() {
