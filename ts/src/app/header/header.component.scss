@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.container {
+    width: 100%;
+   display: flex;
+  
+  }
+  
+  .header {
+    background-color: #FDF1EB;
+    color: #fff;
+    
+    padding: 10px;
+    width: 100%;
+    top: 0; /* Mantém o cabeçalho no topo da viewport */
+  }
+
+  
+  .header-right {
+    display: flex; /* Para manter o texto e o número na mesma linha */
+    align-items: center; /* Alinha os itens verticalmente */
+    padding-left: 20px; /* Adiciona um espaçamento interno à direita */
+  }
+  
+  .header-span {
+    color: #725C5C;
+    font-weight: 400;
+    font-size: 14;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .header-p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #725C5C;
+  }
+
+  .header-h2{
+    font-size: 17px;
+    color: #725C5C;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .container-p {
+    margin: 0 10px; /* Adiciona um espaçamento horizontal entre os parágrafos */
+    color: #333333;
+    font-size: 14px;
+  }
+
+  .container-p-email{
+    color: #333333;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .perfil{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-color: #ccc; /* Cor cinza para o círculo */
+    border-radius: 50%;
+    margin-left: 10px; /* Adiciona um espaçamento à esquerda para separar o ícone */
+
+    margin: 0 auto 20px; /* Centraliza o círculo */
+  }
+
+  .numero {
+    position: absolute; /* Define o posicionamento absoluto */
+    top: -5px; /* Ajusta a posição verticalmente */
+    right: -5px; /* Ajusta a posição horizontalmente */
+    background-color: #f00; /* Cor de fundo vermelha */
+    color: #fff; /* Cor do texto */
+    border-radius: 50%; /* Bordas arredondadas para fazer um círculo */
+    width: 20px; /* Largura */
+    height: 20px; /* Altura */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .select-container {
+    position: relative;
+  }
+
+  .language-container {
+    display: flex;
+    color: black;
+    font-size: 13px;
+    padding: 4px 50px;
+    flex-direction: column;
+  }
+  
+  .language-label {
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+  }
+
+  .language-selector {
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100px;
+  }
+
+  .selected-option {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      
+    }
+    
+    .header-left,
+    .header-right {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  
+    .language-container {
+      padding: 4px;
+    }
+  
+    .select-container {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .header-right {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .container-text {
+      margin-bottom: 10px;
+    }
+  
+    .perfil {
+      margin-top: 10px;
+    }
+  }
+  
+

@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+  .main-text {
+    flex: 5;
+}
+
+.main-buttons {
+    flex: 2;
+}
+
+.button {
+    margin-top: 10px;
+}
+
+
+.container{
+     display: flex;
+     flex-wrap: wrap;
+}
+
+.main-p{
+    color: #ED7839;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.main-p-work{
+  font-size: 14px;
+  color: #ED7839;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.button{
+    background-color: #ED7839;
+    width: 100px;
+    height:30px;
+    margin-right: 10px;
+    border-radius: 7px;
+    color: white;
+    font-size: 15px;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .video{
+    width: 70%;
+    margin-right: 50px;
+  }
+
+  .aside{
+   
+    width: 20%;
+  }
+
+
+  .detalhe{
+    background-color: #FDF1EB;
+    padding: 1px;
+  }
+
+  .detalhes-p{
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+
+  .detalhes-mais{
+    color: white;
+    margin-top: 7px;
+  }
+
+  .margin-bottom{
+    margin-bottom: 15px;
+    padding-left: 6px;
+  }
+
+  .margin-bottom span{
+    color: #5C5C5C;
+    font-family: 'Quicksand', sans-serif; 
+    font-size: 12px;
+  }
+
+  .span-margin{
+    color: #ADA0A0;
+    font-size: 14px;
+  }
+
+  .resumo{
+    background-color: #fff; /* Cor de fundo */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Raio da borda */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+
+  .descricao-resumo{
+    background-color: #FDF1EB;
+    padding: 3px;
+    padding-left: 7px;
+  }
+
+  .descricao{
+    padding-left: 7px;
+  }
+
+  .descricao-span{
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .descricao-p{
+    font-family: 'Quicksand', sans-serif; 
+    font-size: 14px;
+  }
+
+  .discussao{
+    background-color: #fff; /* Cor de fundo */
+    width: 100%;
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Raio da borda */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-top: 20px;
+  }
+
+  .descricao-discussao{
+    background-color: #FDF1EB;
+    padding: 3px;
+  }
+
+  .conteudo{
+    text-align: center;
+  }
+
+  .conteudo-p{
+    color: #ED7839;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .conteudo-p2{
+    color: #595959;
+  }
+
+  .lista-flex {
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista {
+    background-color: gray;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 0 15px; /* Espaçamento horizontal entre os círculos */
+}
+
+.botao{
+  margin-top: 40px;
+}
+
+.btn-criar{
+  background-color: #FEB254;
+  padding: 10px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.title{
+  margin-top: 10px;
+}
+
+.title-h1{
+  font-size: 18px;
+  color: #ED7839;
+}
+
+.title-p{
+  font-size: 15px;
+}
+
+.assuntos{
+  background-color: #fff; /* Cor de fundo */
+  padding: 20px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Borda */
+  margin-top: 10px;
+  border-radius: 5px; /* Raio da borda */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.pontinhos{
+  display: flex;
+  align-items: center;
+}
+
+.pontinhos img{
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+
+.btn-pontinhos{
+  background-color: #ED7839;
+  width: 60px;
+  font-size: 15px;
+  cursor: pointer;
+  border: 0;
+  margin-top: 6px;
+  height: 30px;
+}
+
+.btn-icon{
+  background-color: #ED7839;
+  width: 25px;
+  text-align: center;
+  height:25px;
+  border-radius: 7px;
+  border: 0;
+  cursor: pointer;
+
+}
+
+.comments-box {
+  padding: 10px; /* Espaçamento interno */
+  background-color: #fff; /* Cor de fundo */
+  padding: 20px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Borda */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.comment-box {
+  border: 1px solid #ccc; /* Borda */
+  border-radius: 5px; /* Raio da borda */
+  margin-bottom: 10px; /* Espaçamento inferior */
+  padding: 30px; /* Espaçamento interno */
+  background-color: #f9f9f9; /* Cor de fundo */
+}
+
+.comment{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+
+.nome-p{
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.autor-p{
+  font-size: 12px;
+  font-weight: bold;
+  color: #ED7839;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.like-resp{
+  display: flex;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+.like span{
+  font-size: 14px;
+  cursor: pointer;
+  color: #757575;
+}
+
+.resp span{
+  margin-left: 7px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #757575;
+}
+
+
+.title-span{
+  font-size: 14px;
+}
+
+.title-2{
+  margin-top: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+
+.conteudo.centralizado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.campo {
+  width: 80%; /* Definindo a largura dos campos */
+  margin: 10px auto; /* Centralizando horizontalmente */
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+
+.campo-input,
+.campo-textarea,
+.campo-button {
+  width: 100%; /* Definindo a largura interna dos campos */
+  height: 30px;
+  padding-left: 7px;
+  outline: none;
+}
+
+.campo-textarea {
+  height: 150px; /* Ajustando a altura conforme necessário */
+  padding-left: 7px;
+}
+
+.campo-button{
+  background-color: #ED7839;
+  height: 30px;
+  border: 0;
+  cursor: pointer;
+}
+
+.label{
+  color: #ED7839;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.campo-title{
+  color: #5C5C5C;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+
+
+/* Media query para 960px de largura */
+@media screen and (max-width: 960px) {
+  .container {
+    flex-direction: column; /* Altera a direção do flex container para coluna */
+  }
+
+  .video, .aside {
+    width: 100%;
+    margin-right: 0; /* Remove a margem do lado direito */
+  }
+  .main {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+}

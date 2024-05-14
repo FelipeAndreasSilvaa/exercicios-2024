@@ -1,0 +1,148 @@
+<div class="main">
+    <div class="main-text">
+        <p class="main-p">Análise sensorial de preparações funcionais desenvolvidas para escolares <br> entre 09 e 15 anos, do município de Campinas/SP </p>
+    </div> 
+    <div class="main-buttons">
+        <button class="button" type="submit">Download</button>
+        <button class="button" type="submit"><img src="../../assets/star.png" alt=""></button>
+        <button class="button" type="submit"><img src="../../assets/circle.png" alt=""></button>
+        <p class="main-p-work">COMO CITAR ESSE TRABALHO?</p>
+    </div>
+   
+</div><!--main-->
+
+
+<div class="container">
+    <div class="video">
+        <iframe style="width: 100%;" height="439"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        </iframe>
+    </div>
+    <div class="aside">
+        <div class="detalhe">
+            <p class="detalhes-p">Detalhes</p>
+        </div>
+        <div class="detalhes-mais">
+            <div class="margin-bottom">
+                <span>Tipo de Apresentação: <b>Pôster</b></span>
+            </div>
+            <div class="margin-bottom">
+                <span>Eixo temático: <b>Alimentação e saúde (AS)</b> </span>
+            </div>
+            <div class="margin-bottom">
+                <span>Palavras-chaves: <b>Alimentos funcionais, alimentação escolar.</b></span>
+            </div>
+            <div class="margin-bottom">
+                <span>Autores: <b>Galileo Galilei,Berta Lange de Morretes, Isaac Newton, Cesar Lattes, Stephen Hawking</b></span>
+            </div>
+            <div class="margin-bottom">
+                <span class="span-margin">"Universidade Estadual de Campinas"</span>
+            </div>
+            <div class="margin-bottom">
+                <span class="span-margin">"Universidade de São Paulo"</span>
+            </div>
+            <div class="margin-bottom">
+                <span class="span-margin">"Instituto Nacional de Pesquisas Espaciais"</span>
+            </div>
+            <div class="margin-bottom">
+                <span class="span-margin">"Universidade Federal do Rio de Janeiro"</span>
+            </div>
+        </div>
+    </div>
+</div><!--container-->
+
+<div class="resumo">
+    <div class="descricao-resumo">
+        <p class="detalhes-p">Resumo</p>
+    </div>
+    <div class="descricao">
+        <p class="descricao-p">{{ mostrarMais ? textoCompleto : textoResumido }} <span class="descricao-span" (click)="toggleMostrarMais()">{{ mostrarMais ? 'Ver menos' : 'Ver mais' }}</span></p>
+    </div>
+</div><!--RESUMOS-->
+
+
+<div class="discussao">
+    <div class="descricao-discussao">
+        <p class="detalhes-p">Discussões</p>
+    </div>
+    <div *ngIf="mostrarCampos" class="conteudo centralizado">
+        <p class="campo-title">Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
+        <div class="campo">
+            <label class="label" for="assunto">Assunto</label>
+            <div class="input-wrapper">
+                <input type="text" id="assunto" placeholder="Defina um tópico sucinto para notificar os autores..." [(ngModel)]="assunto" class="campo-input">
+            </div>
+        </div>
+        <div class="campo">
+            <label class="label" for="conteudo">Conteúdo</label>
+            <div class="input-wrapper">
+                <textarea id="conteudo" placeholder="Conteúdo" [(ngModel)]="conteudo" class="campo-textarea"></textarea>
+            </div>
+        </div>
+        <div class="campo">
+            <button (click)="criarTopico()" class="campo-button">Criar Tópico</button>
+        </div>
+    </div>
+    
+    <div *ngIf="!mostrarCampos" class="conteudo">
+        <p class="conteudo-p">Compartilhe suas ideias ou dúvidas com os autores!</p>
+        <div class="lista-flex">
+            <div class="lista"></div>
+            <div class="lista"></div>
+            <div class="lista"></div>
+        </div>
+        <p class="conteudo-p2">Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade? Deixe seus <br> questionamentos ou sugestões para o autor!</p>
+        <div class="botao">
+            <button class="btn-criar" (click)="mostrarCampos = true"><span>+</span> criar tópico</button>
+        </div>
+    </div>
+</div><!--DISCUSSAO-->
+
+
+<!-- NOVOS ASSUNTOS -->
+<div *ngFor="let topico of assuntos" class="assuntos">
+    <div class="title">
+        <h1 class="title-h1">{{ topico.titulo }}</h1>
+        <p class="title-p">{{ topico.autor }}</p>
+        <span class="title-span">{{ topico.conteudo }}</span>
+    </div>
+    <div class="pontinhos">
+        <img src="../../assets/trespontos.png" (click)="toggleExcluir(topico)" />
+        <div class="box-btn">
+            <button *ngIf="topico.mostrarExcluir" class="btn-pontinhos" (click)="deleteTopic(topico)">Excluir</button>
+        </div>
+        <div class="box-btn">
+            <button class="btn-icon" type="submit"><img src="../../assets/heart.png" alt=""></button>
+        </div>
+        <div class="like-resp">
+            <div class="like">
+                <span>0 likes</span>
+            </div>
+            <div class="resp">
+                <span (click)="toggleComments(topico)">1 Respostas</span>
+            </div>
+        </div>
+    </div>
+    <!-- COMENTARIOS -->
+    <div class="comments-box" *ngIf="topico.showComments">
+        <div class="comments">
+            <div class="comment-box">
+                <div class="header-box">
+                    <div class="nome-autor">
+                        <p class="nome-p">Adriano Silva</p>
+                    </div>
+                    <div class="autor">
+                        <p class="autor-p">Autor</p>
+                    </div>
+                </div>
+                <div class="comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+            </div>
+        </div><!--COMMENTS-->
+    </div><!--comments-box-->
+    <!-- COMENTARIOS -->
+</div>
+<!-- NOVOS ASSUNTOS -->
+
+
+
+<app-footer></app-footer>
