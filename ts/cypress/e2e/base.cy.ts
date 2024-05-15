@@ -17,11 +17,11 @@ describe('checa elementos básicos', () => {
     cy.get('.btn-create-topic').contains('criar tópico');
   });
 
-  // it('expandir tópico funciona', () => {
-  //   cy.get('.answered-topic .ops-topic-subject').should('exist').click();
-  //   cy.get('.comments-container').should('exist');
-  //   cy.compareSnapshot('Trabalho - Card de topico expandido');
-  // });
+  it('expandir tópico funciona', () => {
+     cy.get('.answered-topic .ops-topic-subject').should('exist').click();
+   cy.get('.comments-container').should('exist');
+   cy.compareSnapshot('Trabalho - Card de topico expandido');
+ });
 
   it('clicar em `criar tópico` exibe o formulário', () => {
     cy.get('.btn-create-topic').click();
