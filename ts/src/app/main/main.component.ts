@@ -7,8 +7,8 @@ interface Assunto {
   mostrarExcluir: boolean;
   showComments: boolean;
   respondido: boolean;
-  id: number; // Adicione a propriedade 'id'
-  commentCount: number; // Adicione a propriedade 'commentCount'
+  numRespostas: number; // Adicionando a propriedade numRespostas
+
 }
 
 
@@ -22,10 +22,11 @@ export class MainComponent implements OnInit {
   mostrarCampos: boolean = false;
   topicCriado: boolean = false;
   mostrarMensagem = false;
+  
+  //variaveis para mostrar nos topicos
   assunto: string = '';
   conteudo: string = '';
-  respondido: boolean = false;
-  showOpsTopicSubject = true; 
+
   
 
  // Variáveis para controlar a criação de novos tópicos
@@ -54,8 +55,6 @@ export class MainComponent implements OnInit {
 }
 
   criarTopico() {
-    let contadorTopicos = 0;
-    contadorTopicos++;
     const novoAssunto: Assunto = {
       titulo: this.assunto,
       autor: 'Carlos Henrique Santos', // ou qualquer outra fonte de autor que você tenha
@@ -63,8 +62,8 @@ export class MainComponent implements OnInit {
       mostrarExcluir: false,
       showComments: false,
       respondido: false,
-      id: 0,
-      commentCount: 0 
+      numRespostas: 0, 
+
     };
 
     // Adicionar o novo tópico ao array de tópicos
@@ -113,22 +112,8 @@ export class MainComponent implements OnInit {
       topico.showComments = !topico.showComments;
       topico.respondido = true;
 
-      if (topico.showComments) {
-        this.addOpsTopicSubject(topico);
-      }
   }
 
-  addOpsTopicSubject(topico: Assunto) {
-    // Lógica para adicionar o elemento .ops-topic-subject ao DOM
-    const topicElement = document.getElementById(`topic-${topico.id}`);
-    if (topicElement) {
-      const opsTopicSubjectElement = document.createElement('div');
-      opsTopicSubjectElement.className = 'ops-topic-subject';
-      topicElement.querySelector('.comments-box')?.appendChild(opsTopicSubjectElement);
-    } else {
-      console.error(`Elemento do tópico com ID 'topic-${topico.id}' não encontrado.`);
-    }
-  }
   
 
 

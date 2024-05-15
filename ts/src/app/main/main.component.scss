@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 
   .main-text {
@@ -170,7 +171,17 @@
   margin-top: 40px;
 }
 
-#btn-create-topic{
+.btn-create-topic{
+  background-image: linear-gradient(to right, #FEB254 , #F0813D);
+  padding: 10px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.btn-topico{
   background-image: linear-gradient(to right, #FEB254 , #F0813D);
   padding: 10px;
   border: 0;
@@ -285,6 +296,10 @@
   font-weight: bold;
   color: #ED7839;
   font-family: 'Quicksand', sans-serif;
+}
+
+.resp{
+  color: red;
 }
 
 .like-resp{

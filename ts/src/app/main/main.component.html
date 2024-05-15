@@ -92,7 +92,7 @@
         <p class="topico-p">Seu tópico foi enviado com sucesso! :D</p>
         <p class="topico-p-2">Agradecemos por sua contribuição, uma notificação será enviada ao seu email assim que seu tópico for respondido!</p>
         <p class="topico-p-3">Descubra outros trabalhos!</p>
-        <button type="submit"  class="btn-create-topic" id="btn-create-topic-success" (click)="resetar()">Criar novo tópico</button>
+        <button class="btn-create-topic" type="submit" (click)="resetar()">Criar novo tópico</button>
     </div>
     
     <div *ngIf="!mostrarCampos && !topicCriado" class="conteudo" id="conteudo">
@@ -111,8 +111,8 @@
 </div><!--DISCUSSAO-->
 
 
-<!-- NOVOS ASSUNTOS --><!-- NOVOS ASSUNTOS -->
-<div *ngFor="let topico of assuntos" class="assuntos" [class.answered-topic]="topico.respondido" id="topic-{{ topico.id }}">
+<!-- NOVOS ASSUNTOS -->
+<div *ngFor="let topico of assuntos" class="assuntos">
     <div class="title">
         <h1 class="title-h1">{{ topico.titulo }}</h1>
         <p class="title-p">{{ topico.autor }}</p>
@@ -130,13 +130,16 @@
             <div class="like">
                 <span>0 likes</span>
             </div>
-            <div class="resp">
-                <span (click)="toggleComments(topico)">{{ topico.commentCount }} Respostas</span>
+            <div  class="resp">
+                <span class="ops-topic-subject" [ngClass]="{'active': topico.showComments}" (click)="toggleComments(topico)">
+                    {{ topico.numRespostas }} Respostas
+                </span>
             </div>
         </div>
     </div>
+    <br>
     <!-- COMENTARIOS -->
-    <div class="comments-box" *ngIf="topico.showComments">
+    <div class="comments-container" *ngIf="topico.showComments">
         <div class="comments">
             <div class="comment-box">
                 <div class="header-box">
@@ -150,8 +153,9 @@
                 <div class="comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
             </div>
         </div><!-- COMMENTS -->
-        <!-- Adicionando o elemento .ops-topic-subject dentro da comments-box -->
-        <div class="ops-topic-subject" *ngIf="topico.showComments"></div>
+        <div class="comments-box" >
+            <div class="ops-topic-subject"></div>
+        </div>
     </div><!-- comments-box -->
     <!-- COMENTARIOS -->
 </div>
